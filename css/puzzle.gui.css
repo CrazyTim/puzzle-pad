@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300italic,300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,700,300');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+* {
+	margin: 0;
+	padding: 0;
+	border:none;
+	outline: none;
+}
+
+html, select, p, span {
+	font-family: Open Sans, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+tspan {
+	font-family: Open Sans, sans-serif;
+	font-size: 14px;
+}
+
+a, a:active {
+	color: black;
+	text-decoration: none;
+}
+
+input[type="radio"], input[type="checkbox"], .opt_label, input[type="range"] {
+	cursor: pointer;
+}
+
+.valign {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+ul.row_boxes {
+	list-style-type: none;
+	padding:0;
+}
+ul.row_boxes li {
+	display: block;	
+}
+ul.row_boxes li img {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-right: 15px;
+	box-sizing: border-box;
+	    border: solid #C0C0C0 1px;
+}
+ul.row_boxes li span {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+ul.row_boxes li a {
+	border: solid transparent 2px;
+	display: block;
+	min-height: 100px;
+	padding:5px;
+}
+ul.row_boxes li a:hover {
+	background-color: #E4F1F9;
+	
+}
+ul.row_boxes li a h2 {
+	font-size: 16px;
+	padding-bottom: 3px;
+	font-weight: bold;
+}
+ul.row_boxes li a p {
+	font-size: 13px;
+}
+
+.drop_down {
+	display: none;
+	position: absolute;
+}
+
+/* new puzzle menu */
+
+#newPuzzlePopDown {
+	z-index: 0;
+	top: -200px;
+	background-color: #3F4D69;
+	position: absolute;
+	width: 300px;
+	left: 104px;
+	overflow: hidden;
+	height: 237px;
+	box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.4);
+	transition: top 0.3s;
+}
+
+#txtNewPuzzleSearch {
+	padding: 5px 12px 5px 12px;
+    width: calc(100% - 24px);
+    height: 20px;
+}
+
+#newPuzzleList {
+	overflow-y: scroll;
+	width: 100%;
+	height: calc(100% - 30px);
+	/*padding: 8px 0 8px 0;*/
+}
+
+#newPuzzleList a {
+	display:flex;
+		align-items: center; /* vertical center alignment */
+
+	position:relative;
+	padding: 5px 15px 5px 15px;
+	color: white;
+	cursor: pointer;
+}
+
+#newPuzzleList a:hover {
+	background-color: #313742;
+	color: white;
+}
+
+#newPuzzleList a span {
+	padding-left: 15px;
+}
+
+#newPuzzleList a img {
+	height: 50px;
+	background-color: white;
+}
+
+
+/* controls */
+
+.sel.draggable {
+	cursor: -webkit-grab; 
+	cursor: -moz-grab;
+}
+
+.ctrl {
+	display: inline-block;
+	position: absolute;
+	background-color: #fff;
+}
+
+.ctrl .selbox {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border: solid transparent 2px;
+	transition: border 150ms linear;
+}
+
+.ctrl.sel .selbox{
+	border: solid orange 2px;
+
+}
+
+.btn {
+	cursor: pointer;
+	text-decoration: none;
+	display: block;
+	float:left;
+	background-color: white;
+	background-color: #3F4D69;
+	height: 40px;
+	padding: 0 12px;
+	border-left: solid 1px #5C6B86;
+	color: #FFF;
+}
+.btn:active {
+	color: #FFF;
+}
+.btn:hover {
+	background-color: #313742;
+}
+.btn img {
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	padding-right: 3px; 
+	vertical-align: middle
+	
+}
+
+.btn span {
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+.btn_drop {
+	/*-webkit-appearance: none;*/
+	padding-bottom: 3px;
+}
+
+
+/* misc */
+
+.table_grid {
+	border: solid black 1px;
+	border-collapse: collapse;
+	background: rgb(200,200,200); 
+}
+
+.table_grid td {
+	padding: 5px;
+	width: 20px;
+	height: 20px;
+	margin:0px;
+	border: solid black 1px;
+}
+
+
+body {
+	margin: 0;
+	background: rgb(200,200,200); 
+	overflow: hidden;
+}
+
+.test_box {
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: translate(0px, 0px);
+    	transform: translate(0px, 0px);
+}
+
+#print_div {
+	position: relative;
+		width: 210mm;
+    height: 297mm;
+    background: white; 
+    /*zoom: 80%;*/
+    margin:  20px auto 10px auto;
+
+    -webkit-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+	-moz-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+	box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+
+}
+
+#page_wrapper.pA4P #print_div {
+  	width: 210mm;
+    height: 297mm;
+    z-index: 1;
+}
+
+#page_wrapper.pA4L #print_div {
+  	width: 297mm;
+    height: 210mm;
+}
+
+#page_wrapper.pA5P #print_div {
+  	width: 148mm;
+    height: 210mm;
+}
+
+#page_wrapper.pA5L #print_div {
+  	width: 210mm;
+    height: 148mm;
+}
+
+
+
+#menu_wrapper {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+		z-index: 998;
+}
+
+#menu {
+	height: 40px;
+	margin:  0px auto 0px auto;
+	width: 100%;
+	
+	
+	background-color: #61A8D2;
+	/*border-bottom: solid 1px #61ABFF;*/
+	-webkit-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.2);
+	box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.2);
+}
+
+.menuGroup {
+	display: none;
+	float: left;
+	position: relative;
+	z-index: 10;
+}
+.menuGroup .btn:first-child {
+	border-left: none;
+}
+
+.menuGroupBrk {
+	/*margin-left:10px;*/
+}
+
+.menuGroupBrk .btn {
+	background-color: #3C8DBD;
+	border-left: solid 1px #61A8D2;
+}
+.menuGroupBrk .btn:hover {
+	background-color: #2778a9;
+}
+
+#copyright {
+	bottom: 0px;
+	left: 0px;
+	padding: 10px 0;
+	font-size: 12px;
+	color: #848484;
+	pointer-events: none;
+	z-index: 0;
+	width: 100%;
+	right: 0px;
+	text-align: center;
+}
+
+#page_wrapper {
+	position: absolute;
+	top: 40px;
+	bottom: 0px;
+	left: 290px;
+	right: 0px;
+	overflow-y: scroll;
+	padding: 0px 20px;
+}
+
+#print_margin {
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
+	border: dashed 1px rgba(226, 30, 90, 0.48);
+	z-index: 99;
+	pointer-events:none;
+}
+
+#page_border {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	border: solid 1px #7B7B7B;
+	pointer-events:none;
+	z-index: 999; /* so the border is above the border of the puzzles */
+}
+
+@page {
+  margin: 0;
+}
+
+@media print {
+	@page {
+		margin: 0;
+	}
+
+	body * {
+		visibility: hidden;
+	}
+
+	#page_wrapper, #print_div, #print_div * {
+		visibility: visible;
+	}
+
+	#print_div {
+	margin: 0;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	/*background-color: red;*/
+	}
+
+	#page_wrapper {
+		position: relative;
+		top: auto;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		overflow: hidden;
+	}
+
+	#menu_wrapper {
+		display: none;
+	}
+
+	#print_margin {
+		visibility: hidden;
+	}
+
+	#page_wrapper.pA4P, #page_wrapper.pA4P #print_div {
+		width: 210mm;
+		height: 296mm;
+	}
+
+	#page_wrapper.pA4L, #page_wrapper.pA4L #print_div {
+		width: 297mm;
+		height: 209mm;
+	}
+
+	#page_wrapper.pA5P, #page_wrapper.pA5P #print_div {
+		width: 148mm;
+		height: 210mm;
+	}
+
+	#page_wrapper.pA5L, #page_wrapper.pA5L #print_div {
+		width: 210mm;
+		height: 148mm;
+	}
+}
+
+html, body, .noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.solution.hide {
+	visibility: hidden;
+	display: none;
+}

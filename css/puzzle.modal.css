@@ -1,0 +1,154 @@
+#lean_overlay {
+    position: fixed;
+    z-index:999;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.modal {
+	display: none;
+	background-color: white;
+	/*border: solid 1px #61ABFF;*/
+	-webkit-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+	-moz-box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+	box-shadow: 0px 6px 17px -2px rgba(0,0,0,0.43);
+
+}
+
+
+.modal_close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(../img/close_40.svg);
+	z-index: 2;
+}
+
+.modal > div {
+	overflow-y: auto;
+	overflow-x: hidden; 
+}
+
+
+.modal h1 {
+	font-size: 18px;
+	padding: 8px 0 8px 15px;
+	background-color: #3F4D69;
+	color: #FFF;
+	cursor:default;
+	font-weight: 600;
+}
+
+
+#modal1 > div {
+	width: 400px;
+	max-height: 400px;
+}
+
+#modal2 > div {
+	width: 500px;
+	max-height: 520px;
+}
+
+
+
+.modal_content {
+	padding: 10px 35px 15px 40px;
+}
+
+.modal_content p {
+	margin:10px 0 10px 0;
+}
+
+.modal_content h4 {
+	margin:18px 0 10px -8px;
+	font-weight: 600;
+	cursor:default;
+}
+
+.modal_content textarea {
+	width: 100%;
+    resize: none;
+    border: solid 1px #DCDCDC;
+    padding: 8px;
+    height: 100px;
+}
+
+.modal_content .opt_label {
+	padding: 5px 5px 5px 5px;
+	margin-right: 15px;
+}
+
+.modal_content button {
+	margin:15px 0 0 0;
+	padding: 8px 25px;
+	background-color: #3F4D69;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.modal .ws_size_wrapper {
+	margin: 10px 0 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+	.modal .ws_size_wrapper p {
+		margin: 0;
+		width: 64px;
+	}
+
+	.modal .ws_size_wrapper input[type=range]{
+		width: 200px;
+		padding: 5px;
+	}
+
+.range-slider{
+	z-index: 1;
+	position: relative;
+}
+
+.range-label {
+	display: inline-block;
+	position: relative;
+	width: $range-label-width;
+	color: $shade-0;
+	text-align: center;
+	border-radius: 2px;
+	    padding: 0px 4px 0 3px;
+	width: 23px;
+	/*border: solid 1px #ababab;*/
+	margin-right: 5px;
+	z-index: 1;
+	background-color: #e3ddd8;
+	cursor: pointer;
+ }
+
+  /*.range-label:before {
+    position: absolute;
+    top: 4px;
+    right: -7px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 7px solid #e3ddd8;
+    border-bottom: 5px solid transparent;
+    content: '';
+    z-index: 0
+  }*/
+
+ #ws_word_list {
+	position: relative;
+	resize: none;
+	border: solid 1px #DCDCDC;
+	padding: 8px;
+	min-height: 100px;
+	border-radius: 2px;
+ }

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	
+<head>
+
+	<title></title>
+	<link rel="stylesheet" href="css/jquery.ui.css"/>
+ 	<link rel="stylesheet" href="css/jquery.leanModal.css"/>
+
+ 	<link rel="stylesheet" href="css/puzzle.gui.css"/>
+ 	<link rel="stylesheet" href="css/puzzle.sb.css"/>
+
+	<link rel="stylesheet" href="css/tipped.css" />
+	<link rel="stylesheet" href="css/taggle.css" />
+
+</head>
+
+<body>
+	
+	<div id="page_wrapper" class="noselect">
+
+		<div id="print_div" class="noselect" tag="page">
+
+			<div id="print_margin">
+			</div>
+
+			<div id="page_border">
+			</div>
+
+		</div>
+
+		<div id="copyright"></div>
+
+	</div>
+
+	<div id="side_bar_wrapper" class="noselect">
+		
+		<h1 class="title">Word Search</h1>
+
+
+		<!-- modal: word search settings-->
+		<div id="sb1" class="sb">
+			
+
+			<div class="content">
+				
+				<h4>Words:</h4>
+
+				<div class="control_group">
+					<div id="word_list"></div>
+					<input id="05" type="checkbox" name="overlap_words" value="1" checked><label class="opt_label" for="05">Allow Overlapping Words</label>
+				</div>
+
+				<h4>Grid:</h4>
+
+				<div class="control_group grid">
+					<div class="range_slider_wrapper grid_width">
+						<p>Width:</p>
+						<label class="range_label" for="01">0</label>
+						<span class="range_spacer"></span>
+						<input type="range" id="01" value="8" max="30" min="3" step="1">
+					</div>
+					<div class="range_slider_wrapper grid_height">
+						<p>Height:</p>
+						<label class="range_label" for="02">0</label>
+						<span class="range_spacer"></span>
+						<input type="range" id="02" value="8" max="30" min="3" step="1">
+					</div>
+				</div>
+
+				<h4>Directions:</h4>
+				
+				<div class="control_group">
+					<input id="06" type="checkbox" name="overlap_words" value="0" checked><label class="opt_label" for="06">Diagonal</label>
+					<span class="field_spacer"></span>
+					<input id="07" type="checkbox" name="overlap_words" value="1" checked><label class="opt_label" for="07">Backwards</label>
+				</div>
+
+				<h4>Appearance:</h4>
+				
+				<div class="control_group">
+					<input id="08" type="checkbox" name="overlap_words" value="0" checked><label class="opt_label" for="08">Show Answer</label>
+					<br/>
+					<input id="09" type="checkbox" name="overlap_words" value="1" checked><label class="opt_label" for="09">Show Grid Lines</label>
+					<br/>
+
+					<div class="range_slider_wrapper border_width">
+						<p>Border Width:</p>
+						<label class="range_label" for="03">0</label>
+						<span class="range_spacer"></span>
+						<input type="range" id="03" value="1" max="30" min="0" step="1">
+					</div>
+					<div class="range_slider_wrapper cell_padding">
+						<p>Cell Padding:</p>
+						<label class="range_label" for="04">0</label>
+						<span class="range_spacer"></span>
+						<input type="range" id="04" value="5" max="10" min="1" step="1">
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="menu_wrapper" class="noselect">
+
+		<div id="menu" class="noselect">
+
+			<!-- add button -->
+			<div id="mg01" class="menuGroup">
+				<a id="btnundo" class="btn" title="undo">
+					<span><img src="img/btn_undo.svg"/></span>
+				</a>
+				<a id="btnredo" class="btn" title="redo">
+					<span><img src="img/btn_redo.svg"/></span>
+				</a>
+				<a id="btnNewPuzzle" class="btn" style="padding-right: 20px;" title="Add Something New...">
+					<span><img src="img/btn_new.svg"/>New</span>
+				</a>
+			</div>
+
+			<!-- page -->
+			<div id="mg02" class="menuGroup menuGroupBrk">
+				<a id="btnPrint" class="btn" title="Print Page...">
+					<span><img src="img/btn_print.svg"/>Print</span>
+				</a>
+
+				<select id="cmbPageOrientation" class="btn btn_drop" title="Page Rotation">
+				  <option value="P">Portrait</option>
+				  <option value="L">Landscape</option>
+				</select>
+
+				<select id="cmbPageSize" class="btn btn_drop" title="Page Size">
+					<option value="A4">A4</option>
+					<option value="A5">A5</option>
+				</select>				
+			</div>
+
+			<!-- word search -->
+			<div id="mg03" class="menuGroup menuGroupBrk">
+				<a id="btnSettings" class="btn" href="#modal2" rel="leanModal" title="Edit Puzzle Settings...">
+					<span><img src="img/btn_spanner.svg"/>Settings</span>
+				</a>
+				<a id="btnRefresh" class="btn">
+					<span><img src="img/btn_refresh.svg"/>Re-generate</span>
+				</a>
+				<a id="btnShowSolution" class="btn">
+					<span><img src="img/btn_tick_off.svg"/>Show Answer</span>
+				</a>
+				<select id="cmbAppearance" class="btn btn_drop">
+				  <option value="P">Appearance</option>
+				</select>
+
+
+
+				<a id="btnDelete" class="btn">
+					<span><img src="img/btn_delete.svg"/>Delete</span>
+				</a>
+			</div>
+
+			<div id="newPuzzlePopDown">
+					<input type="text" id="txtNewPuzzleSearch" placeholder="Search"/>
+					<div id="newPuzzleList">
+						<a href="#modal2" rel="leanModal">
+							<img src="img/puz_word_search.svg">
+							<span>Word Search</span>
+						</a>
+						<a>
+							<img src="img/puz_sudoku.svg">
+							<span>Sudoku</span>
+						</a>
+						<a>
+							<img src="img/puz_temp.svg">
+							<span>Jumbled Words</span>
+						</a>
+						<a>
+							<img src="img/puz_maze.svg">
+							<span>Maze</span>
+						</a>
+						<a>
+							<img src="img/puz_temp.svg">
+							<span>Cryptogram</span>
+						</a>
+						<a>
+							<img src="img/puz_temp.svg">
+							<span>Crossword</span>
+						</a>
+						<a>
+							<img src="img/puz_text.svg">
+							<span>Text</span>
+						</a>
+						<a>
+							<img src="img/puz_picture.svg">
+							<span>Picture</span>
+						</a>
+
+					</div>
+				</div>
+
+			<!--
+			<label for="chkSnapToGrid"><input id="chkSnapToGrid" type="checkbox" checked> Snap To Grid</label>
+			&nbsp;
+			-->
+			
+		</div>
+
+	</div>
+
+	<!-- load libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="js/svg.min.js"></script> <!-- for drawing puzzles -->
+	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script> <!-- for modal popups -->
+	
+	<script type="text/javascript" src="js/puzzle.gui.js"></script>
+	<script type="text/javascript" src="js/puzzle.badwords.js"></script>
+	<script type="text/javascript" src="js/puzzle.ws.js"></script>
+	<script type="text/javascript" src="js/puzzle.text.js"></script>
+	<script type="text/javascript" src="js/puzzle.general.js"></script>
+	<script type="text/javascript" src="js/tipped.js"></script> <!-- for tooltips-->
+	<script type="text/javascript" src="js/taggle.js"></script> <!-- for converting typed words into tags, see: https://sean.is/poppin/tags -->
+
+	<script>
+		var u;
+		$(window).bind("load", function() {
+			u = new PUZZLE.gui;
+			u.initalise();
+		});
+	</script>
+
+
+
+
+</body>
+</html>
